@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Event Permission Form</title>
+    <link rel="stylesheet" href="Event.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Event Details </h1>
+        <p>Please fill out the details below:</p>
+
+        <form>
+            <div class="form-group">
+                <label for="eventName">Event Name:</label>
+                <input type="text" id="eventName" name="eventName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="club">Club:</label>
+                <select id="club" name="club" required>
+                    <option value="" disabled selected>Select Club</option>
+                    <option value="Drama">TinkerHub</option>
+                    <option value="Music">MuLearn</option>
+                    <option value="Sports">Evolvates</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="venue">Venue:</label>
+                <select id="venue" name="venue" required>
+                    <option value="" disabled selected>Select Venue</option>
+                    <option value="Auditorium">PTA Hall</option>
+                    <option value="Ground">Activity Hall</option>
+                    <option value="Conference Room">Indoor Stadium</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="time">Time From:</label>
+                <input type="time" id="time" name="time" required>
+            </div>
+            
+            
+            <div class="form-group">
+                <label for="time">Time To:</label>
+                <input type="time" id="time" name="time" required>
+            </div>
+
+            <div class="form-group">
+                <label for="requirements">Requirements:</label>
+                <select id="requirements" name="requirements" required>
+                    <option value="" disabled selected>Select Requirement</option>
+                    <option value="Sound System">Sound System</option>
+                    <option value="Projector">Projector</option>
+                    <option value="Lighting">Lighting</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="button generate-btn">Generate Permission</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
