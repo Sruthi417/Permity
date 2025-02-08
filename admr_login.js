@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (selectedDesignation === "teacher" || selectedDesignation === "hod") {
             message += `\nDepartment: ${selectedDepartment}`;
         }
-        
+        const subm= document.getElementaryBy
         alert("Login Successful!\n" + message);
     });
 });
