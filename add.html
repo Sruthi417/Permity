@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permission Application</title>
+    <link rel="stylesheet" href="add.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <span class="home-icon" onclick="goHome()">&#8962;</span>
+        <span class="plus-icon" onclick="openModal()">&#43;</span>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+
+        <!-- Welcome Message -->
+        <div class="welcome">
+            <h2>Welcome to the Permission Application System</h2>
+            <p>Apply for event, attendance, and other permissions in one place.</p>
+        </div>
+
+        <!-- Permission Section -->
+        <div class="section">
+            <div class="title">Apply for Permission</div>
+            <div class="button-container">
+                <button class="plus-button" onclick="openModal()">+ Select Permission Type</button>
+            </div>
+        </div>
+
+        <!-- Recent Applications -->
+        <div class="applications">
+            <div class="title">Recent Applications</div>
+            <div class="application">
+                <span>Event Permission</span>
+                <span class="status approved">Approved</span>
+            </div>
+            <div class="application">
+                <span>Attendance Request</span>
+                <span class="status pending">Pending</span>
+            </div>
+            <div class="application">
+                <span>Other Request</span>
+                <span class="status rejected">Rejected</span>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="permissionModal">
+        <div class="modal-content">
+            <h3>Select Permission Type</h3>
+            <select id="permissionType">
+                <option value="event">Event</option>
+                <option value="attendance">Attendance</option>
+                <option value="other">Other</option>
+            </select>
+            <button onclick="submitPermission()">Submit</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>© 2025 College Permission System. All Rights Reserved.</p>
+    </div>
+
+    <script src="add.js"></script>
+
+</body>
+</html>
