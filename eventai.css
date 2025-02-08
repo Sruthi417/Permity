@@ -1,4 +1,4 @@
-/* Reset */
+/* Reset default browser styles */
 * {
     margin: 0;
     padding: 0;
@@ -6,75 +6,66 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    padding: 20px;
-}
-
-/* Main Container (70% / 30% layout) */
-.main-container {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #000000, #0a0f5a);
+    height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    margin-bottom: 20px;
-    height: 300px; /* Adjust the height as per your need */
+    align-items: center;
+    margin: 20px;
 }
 
-/* Left Container - 70% width */
-.left-container {
+.container {
     width: 70%;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Right Container - 30% width */
-.right-container {
-    width: 28%;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Submit Button Container */
-.submit-container {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.button {
-    width: 150px;
-    background-color: #5cb85c;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
     color: white;
-    padding: 15px;
-    font-size: 18px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.upper-container {
+    height: 60%; /* 60% of the page height */
+}
+
+.lower-container {
+    height: 30%; /* 30% of the page height */
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Glassy Effect for Submit Button */
+.button {
+    text-decoration: none;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.2); /* Transparent glassy effect */
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Slight border for effect */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Slight shadow */
 }
 
 .button:hover {
-    background-color: #4cae4c;
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    .main-container {
-        flex-direction: column;
-    }
-
-    .left-container,
-    .right-container {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .button {
-        width: 100%;
-    }
+    background: rgba(255, 255, 255, 0.4); /* More solid on hover */
+    transform: scale(1.05); /* Slight scale effect */
 }
