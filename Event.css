@@ -73,12 +73,12 @@ button.generate-btn {
     font-size: 1.2rem;
     border-radius: 5px;
     border: none;
-    background-color: #28A745;
+    background-color: #007BFF;
     color: white;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 button.generate-btn:hover {
-    background-color: #218838;
+    background-color: #0056b3;
 }
