@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login</title>
+    <link rel="stylesheet" href="admr_login.css">
+    <script defer src="admr_login.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Administrator Login</h1>
+        <form id="login-form">
+            <div class="input-box">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="Enter your name" required>
+            </div>
+
+            <div class="input-box">
+                <label for="Designation">Designation</label>
+                <select id="designation" required>
+                    <option value="" disabled selected>Select Designation</option>
+                    <option value="principal">Principal</option>
+                    <option value="director">Director</option>
+                    <option value="administrator">Administrator</option>
+                    <option value="chairman">Chairman</option>
+                    <option value="manager">Manager</option>
+                    <option value="hod">HOD</option>
+                    <option value="teacher">Teacher</option>
+                </select>
+            </div>
+
+            <div class="input-box">
+                <label for="Department">Course</label>
+                <select id="department" required>
+                    <option value="" disabled selected>Select a Department</option>
+                </select>
+            </div>
+            <div class="input-box">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+
+            
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+</body>
+</html>
