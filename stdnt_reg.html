@@ -51,7 +51,15 @@
                 <input type="tel" id="phone" placeholder="Enter your phone number" required>
             </div>
 
-            <button type="submit">Sign Up</button>
+    
+            <button type="submit" onclick="redirectToPage()">Sign Up</button>
+
+            <script>
+                function redirectToPage() {
+                    // Redirect to the desired page, e.g., "welcome.html"
+                    window.location.href = "add.html";
+                }
+            </script>
         </form>
     </div>
 
