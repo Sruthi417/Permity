@@ -58,8 +58,16 @@ p {
     background-color: #0056b3;
 }
 
-.student-btn {
+.Administrator-btn {
+    background-color: #007BFF;
+}
+
+.Administrator-btn:hover {
     background-color: #0056b3;
+}
+
+.student-btn {
+    background-color: #007BFF;
 }
 
 .student-btn:hover {
