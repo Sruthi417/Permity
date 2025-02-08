@@ -10,15 +10,25 @@ body {
     /* background-color: #f4f4f4; */
     background: linear-gradient(135deg, #000000, #0a0f5a);
     color: #333;
+    display: flex;
+    justify-content: center;
 }
 
 .container {
-    width: 60%;
-    margin: 50px auto;
-    background: #0a0f5a;
+    /* width: 100%;
+    margin: 20px;
+    background: rgba(255, 255, 255, 0.1);
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); */
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    width: 100%;
+    max-width: 500px;
+    margin: 20px;
 }
 
 h1 {
