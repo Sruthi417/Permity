@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Login</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="stdnt_login.css">
+    <script defer src="stdnt_login.js"></script>
 </head>
 <body>
 
@@ -35,7 +35,9 @@
 
             <div class="input-box">
                 <label for="course">Course</label>
-                <input type="text" id="course" placeholder="Enter your course" required>
+                <select id="course" required>
+                    <option value="" disabled selected>Select a Course</option>
+                </select>
             </div>
 
             <div class="input-box">
