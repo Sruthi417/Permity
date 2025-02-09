@@ -29,4 +29,4 @@ async def create_letter(letter_info : LetterInfo):
     print(response.text)
     return response.text
 # app.mount("/", StaticFiles(directory="static"), name="static")
-uvicorn.run(app, port=8000)
+# uvicorn.run(app, port=8000)
