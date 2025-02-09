@@ -21,7 +21,50 @@ body {
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    text-align: center;
+    margin-bottom: 20px; 
+    
 }
+
+.select{
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    margin-top: 20px;}
+    h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        font-weight: 600;
+        color: #faf8f8;
+    }
+    
+    /* Dropdown Styling */
+    select {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        outline: none;
+        background: white;
+        cursor: pointer;
+        font-weight: 500;
+    }
+    
+    /* Add hover effect */
+    select:hover {
+        background: #f1f1f1;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 600px) {
+        .container {
+            width: 90%;
+        }
+    }
+    
 
 h1 {
     font-size: 2.5rem;
@@ -54,10 +97,6 @@ p {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Slight shadow */
 }
 
-.button:hover {
-    background: rgba(0, 123, 255, 0.4); /* Slightly more solid on hover */
-    transform: scale(1.05); /* Slight scale effect */
-}
 
 .admin-btn {
     background: rgba(255, 255, 255, 0.2); /* Transparent glassy effect */
@@ -74,5 +113,77 @@ p {
 }
 
 .student-btn:hover {
+    background: rgba(0, 123, 255, 0.4);
+}
+.student-btn {
+    background: rgba(255, 255, 255, 0.2); /* Transparent glassy effect */
+
+}
+
+.student-btn:hover {
+    background: rgba(0, 123, 255, 0.4);
+}
+
+.Administrator-btn{
+    background: rgba(255, 255, 255, 0.2);    
+}
+.Administrator-btn:hover {
+    background: rgba(0, 123, 255, 0.4);
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Glassy Effect for Buttons */
+.button {
+    text-decoration: none;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.2); /* Transparent glassy effect */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Slight shadow */
+}
+
+/* Role Buttons */
+.admin-btn,
+.student-btn,
+.Administrator-btn {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.admin-btn:hover,
+.student-btn:hover,
+.Administrator-btn:hover {
+    background: rgba(0, 123, 255, 0.4);
+}
+
+/* Bottom Buttons */
+.bottom-buttons {
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    display: flex;
+    justify-content: space-between; /* Sign Up on the left, Sign In on the right */
+    padding: 0 20px;
+}
+
+.bottom-buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    color: white;
+    background: rgba(255, 255, 255, 0.3);
+    transition: background 0.3s ease;
+}
+
+.bottom-buttons button:hover {
     background: rgba(0, 123, 255, 0.4);
 }

@@ -28,6 +28,16 @@ body {
     width: 400px;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+
 /* Title Styling */
 h1 {
     font-size: 26px;
