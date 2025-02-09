@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Login</title>
-    <link rel="stylesheet" href="std_login.css">
-    <script defer src="std_login.js"></script>
+    <link rel="stylesheet" href="./std_login.css">
 </head>
 <body>
-
     <div class="container">
         <h1>Student Login</h1>
         <form id="login-form">
@@ -21,18 +19,74 @@
                 <label for="email">Email</label>
                 <input type="email" id="email" placeholder="Enter your email" required>
             </div>
-            
-            
-            <button type="submit" onclick="redirectToPage()">Sign Up</button>
 
-            <script>
-                function redirectToPage() {
-                    // Redirect to the desired page, e.g., "welcome.html"
-                    window.location.href = "add.html";
-                }
-            </script>
+            <div class="error-message" id="error-message">
+                Invalid credentials. Please try again.
+            </div>
+
+            <button type="submit">Login</button>
         </form>
     </div>
 
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getFirestore, collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+        // Your Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCpUovJCdCdZkuNykYyYDOfQKONe2EDg1g",
+            authDomain: "permity-sjc.firebaseapp.com",
+            projectId: "permity-sjc",
+            storageBucket: "permity-sjc.firebasestorage.app",
+            messagingSenderId: "852304014974",
+            appId: "1:852304014974:web:7943f6b7062d20c0c1722f"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        // Handle form submission
+        document.getElementById('login-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const errorMessage = document.getElementById('error-message');
+
+            try {
+                // Create a query against the students collection
+                const studentsRef = collection(db, "students");
+                const q = query(
+                    studentsRef, 
+                    where("fullName", "==", name),
+                    where("email", "==", email)
+                );
+
+                const querySnapshot = await getDocs(q);
+
+                if (!querySnapshot.empty) {
+                    // Login successful
+                    console.log("Login successful!");
+                    
+                    // Store user info in sessionStorage
+                    const studentDoc = querySnapshot.docs[0].data();
+                    sessionStorage.setItem('studentName', studentDoc.fullName);
+                    sessionStorage.setItem('studentEmail', studentDoc.email);
+                    
+                    // Redirect to add.html
+                    window.location.href = "add.html";
+                } else {
+                    // No matching record found
+                    errorMessage.style.display = 'block';
+                    console.log("Invalid credentials");
+                }
+            } catch (error) {
+                console.error("Error during login: ", error);
+                errorMessage.style.display = 'block';
+            }
+        });
+    </script>
 </body>
 </html>

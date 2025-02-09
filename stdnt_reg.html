@@ -4,12 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Login</title>
-    <link rel="stylesheet" href="stdnt_reg.css">
-    <script defer src="stdnt_reg.js"></script>
-    <script defer src="./firebase_config.js"></script>
+    <link rel="stylesheet" href="./stdnt_reg.css">
 </head>
 <body>
-
     <div class="container">
         <h1>Student Login</h1>
         <form id="login-form">
@@ -51,17 +48,93 @@
                 <input type="tel" id="phone" placeholder="Enter your phone number" required>
             </div>
 
-    
-            <button type="submit" onclick="redirectToPage()">Sign Up</button>
-
-            <script>
-                function redirectToPage() {
-                    // Redirect to the desired page, e.g., "welcome.html"
-                    window.location.href = "add.html";
-                }
-            </script>
+            <button type="submit">Sign Up</button>
         </form>
     </div>
 
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+        // Your Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCpUovJCdCdZkuNykYyYDOfQKONe2EDg1g",
+            authDomain: "permity-sjc.firebaseapp.com",
+            projectId: "permity-sjc",
+            storageBucket: "permity-sjc.firebasestorage.app",
+            messagingSenderId: "852304014974",
+            appId: "1:852304014974:web:7943f6b7062d20c0c1722f"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        // Course options for each department
+        const courseOptions = {
+            cs: ['Data Structures', 'Algorithms', 'Database Management', 'Web Development'],
+            it: ['Network Security', 'Cloud Computing', 'Software Engineering', 'Data Analytics'],
+            ee: ['Power Systems', 'Control Systems', 'Digital Electronics', 'Microprocessors'],
+            mech: ['Thermodynamics', 'Machine Design', 'Fluid Mechanics', 'Manufacturing Processes']
+        };
+
+        // Update course options when department changes
+        document.getElementById('department').addEventListener('change', function() {
+            const courseSelect = document.getElementById('course');
+            const selectedDepartment = this.value;
+            
+            // Clear existing options
+            courseSelect.innerHTML = '<option value="" disabled selected>Select a Course</option>';
+            
+            // Add new options based on selected department
+            courseOptions[selectedDepartment].forEach(course => {
+                const option = document.createElement('option');
+                option.value = course.toLowerCase().replace(/\s+/g, '-');
+                option.textContent = course;
+                courseSelect.appendChild(option);
+            });
+        });
+
+        // Form validation for phone number
+        document.getElementById('phone').addEventListener('input', function() {
+            this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10);
+        });
+
+        // Handle form submission
+        document.getElementById('login-form').addEventListener('submit', async function(e) {
+            e.preventDefault(); // Prevent default form submission
+
+            try {
+                // Get form values
+                const studentData = {
+                    fullName: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    department: document.getElementById('department').value,
+                    course: document.getElementById('course').value,
+                    rollNumber: document.getElementById('rollno').value,
+                    phoneNumber: document.getElementById('phone').value,
+                    timestamp: new Date()
+                };
+
+                // Add document to Firestore
+                const docRef = await addDoc(collection(db, "students"), studentData);
+                console.log("Document written with ID: ", docRef.id);
+                
+                // Show success message
+                alert('Registration successful!');
+                
+                // Clear the form
+                this.reset();
+                
+                // Redirect to add.html
+                window.location.href = "add.html";
+                
+            } catch (error) {
+                console.error("Error adding document: ", error);
+                alert('An error occurred during registration. Please try again.');
+            }
+        });
+    </script>
 </body>
 </html>
