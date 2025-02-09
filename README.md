@@ -49,7 +49,7 @@ Letter Generator
 
 ### Project Demo
 # Video
-[Add your demo video link here]
+
 Website Working
 
 ## Team Contributions
