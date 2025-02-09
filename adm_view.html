@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Permission Letters Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #000000, #0a0f5a);
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background-color: #1e2a47;
+            color: white;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            width: 100%;
+        }
+
+        .filters {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+        }
+
+        select, input {
+            padding: 0.5rem;
+            border: 1px solid #2980b9;
+            border-radius: 4px;
+            background-color: #2c3e50;
+            color: #fff;
+        }
+
+        .letters-grid {
+            display: grid;
+            gap: 1rem;
+            width: 100%;
+        }
+
+        .letter-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .letter-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #46617a;
+        }
+
+        .student-info {
+            font-size: 0.9rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .letter-content {
+            margin-bottom: 1rem;
+        }
+
+        .letter-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .status {
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .status-pending {
+            color: #f1c40f;
+        }
+
+        .status-approved {
+            color: #2ecc71;
+        }
+
+        .status-rejected {
+            color: #e74c3c;
+        }
+
+        .actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+
+        .approve-btn {
+            background-color: #2ecc71;
+            color: white;
+        }
+
+        .reject-btn {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        .view-btn {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .view-btn:hover {
+            background-color: #2980b9;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #1e2a47;
+            margin-top: 50px;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .filters {
+                flex-direction: column;
+            }
+            
+            select, input {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Student Permission Letters Dashboard</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="filters">
+            <select>
+                <option value="">Filter by Department</option>
+                <option value="cse">Computer Science</option>
+                <option value="ece">Electronics</option>
+                <option value="mech">Mechanical</option>
+            </select>
+            <select>
+                <option value="">Filter by Status</option>
+                <option value="pending">Pending</option>
+                <option value="approved">Approved</option>
+                <option value="rejected">Rejected</option>
+            </select>
+            <select>
+                <option value="">Filter by Authority</option>
+                <option value="hod">HOD</option>
+                <option value="principal">Principal</option>
+                <option value="director">Director</option>
+            </select>
+            <input type="text" placeholder="Search by student name or ID">
+        </div>
+
+        <div class="letters-grid">
+            <!-- Sample Letter Card 1 -->
+            <div class="letter-card">
+                <div class="letter-header">
+                    <h3>Leave Application</h3>
+                    <span class="status status-pending">Pending</span>
+                </div>
+                <div class="student-info">
+                    <p><strong>Student:</strong> John Doe (CSE2023001)</p>
+                    <p><strong>Department:</strong> Computer Science</p>
+                    <p><strong>Date:</strong> Feb 9, 2025</p>
+                </div>
+                <div class="letter-content">
+                    <p>Request for 2 days leave due to family function...</p>
+                </div>
+                <div class="letter-footer">
+                    <div class="actions">
+                        <button class="view-btn">View Details</button>
+                        <button class="approve-btn">Approve</button>
+                        <button class="reject-btn">Reject</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sample Letter Card 2 -->
+            <div class="letter-card">
+                <div class="letter-header">
+                    <h3>Event Participation Request</h3>
+                    <span class="status status-approved">Approved</span>
+                </div>
+                <div class="student-info">
+                    <p><strong>Student:</strong> Jane Smith (ECE2023045)</p>
+                    <p><strong>Department:</strong> Electronics</p>
+                    <p><strong>Date:</strong> Feb 8, 2025</p>
+                </div>
+                <div class="letter-content">
+                    <p>Permission to participate in national level technical symposium...</p>
+                </div>
+                <div class="letter-footer">
+                    <div class="actions">
+                        <button class="view-btn">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Student Permission Management System</p>
+    </footer>
+</body>
+</html>
