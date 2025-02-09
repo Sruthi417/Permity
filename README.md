@@ -10,7 +10,7 @@
 - Member 3: Niveditha T - St. Joseph's College, Devagiri
 
 ### Hosted Project Link
-[mention your project hosted project link here]
+https://permity.vercel.app/#
 
 ### Project Description
 The Permity is a College Permission Management System (CPMS) designed to streamline the student permission process, eliminating traditional paperwork. Students can submit, track, and manage requests online, while administrators digitally approve them, ensuring a more efficient, transparent, and time-saving process for everyone involved.
@@ -28,39 +28,29 @@ For Software:
 - CSS
 - JS
 - Firebase
+- AI Integration
 
 ### Implementation
-For Software:
-# Installation
-[commands]
-
-# Run
-[commands]
-
 ### Project Documentation
 For Software:
 
 # Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+![Screenshot1]
+https://github.com/Sruthi417/Permity/blob/main/img1.jpeg
+Welcome Page
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+![Screenshot2]
+https://github.com/Sruthi417/Permity/blob/main/img2.jpeg
+Event Details Page
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+![Screenshot3]
+Letter Generator
 
-# Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
 
 ### Project Demo
 # Video
 [Add your demo video link here]
-*Explain what the video demonstrates*
-
-# Additional Demos
-[Add any extra demo materials/links]
+Website Working
 
 ## Team Contributions
 - Sruthi M: Ideation, FrontEnd & BackEnd
