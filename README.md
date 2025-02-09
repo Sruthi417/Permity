@@ -49,7 +49,7 @@ Letter Generator
 
 ### Project Demo
 # Video
-
+https://github.com/Sruthi417/Permity/blob/main/permity.mp4
 Website Working
 
 ## Team Contributions
