@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Permission Application</title>
-    <link rel="stylesheet" href="zadm_add.css">
+    <title>Permission checher</title>
+    <link rel="stylesheet" href="admadd.css">
 </head>
 <body>
 
     <!-- Navbar -->
     <div class="navbar">
         <span class="home-icon" onclick="goHome()">&#8962;</span>
-        <span class="plus-icon" onclick="openModal()">&#43;</span>
     </div>
 
     <!-- Main Content -->
@@ -20,16 +19,16 @@
         <!-- Welcome Message -->
         <div class="welcome">
             <h2>Welcome to the Permission Application System</h2>
-            <p>Apply for event, attendance, and other permissions in one place.</p>
+            <p>Approve event, attendance, and other permissions in one place.</p>
         </div>
 
         <!-- Permission Section -->
-        <div class="section">
+        <!-- <div class="section">
             <div class="title">Apply for Permission</div>
             <div class="button-container">
                 <button class="plus-button" onclick="openModal()">+ Select Permission Type</button>
             </div>
-        </div>
+        </div> -->
 
         <!-- Recent Applications -->
         <div class="applications">
@@ -54,12 +53,20 @@
     <div class="modal" id="permissionModal">
         <div class="modal-content">
             <h3>Select Permission Type</h3>
-            <select id="permissionType">
-                <option value="event">Event</option>
-                <option value="attendance">Attendance</option>
+            <select id="pageSelect" onchange="redirectToPage()">
+                <option value="Event.html">Event</option>
+                <option value="attendance.html">Attendance</option>
                 <option value="other">Other</option>
             </select>
-            <button onclick="submitPermission()">Submit</button>
+            <script>
+                function redirectToPage() {
+                    const selectedPage = document.getElementById("pageSelect").value;
+                    if (selectedPage) {
+                        window.location.href = selectedPage; // Redirect to the selected page
+                    }
+                }
+            </script>
+            <!-- <button onclick="submitPermission()">Submit</button> -->
         </div>
     </div>
 
