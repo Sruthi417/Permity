@@ -82,3 +82,19 @@ button.generate-btn {
 button.generate-btn:hover {
     background-color: #0056b3;
 }
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    background: #007bff;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #0056b3;
+}

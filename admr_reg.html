@@ -42,8 +42,16 @@
                 <label for="email">Email</label>
                 <input type="email" id="email" placeholder="Enter your email" required>
             </div>
+<!-- 
+            <button type="submit">Login</button> -->
+            <button type="submit" onclick="redirectToPage()">Sign Up</button>
 
-            <button type="submit">Login</button>
+            <script>
+                function redirectToPage() {
+                    // Redirect to the desired page, e.g., "welcome.html"
+                    window.location.href = "admadd.html";
+                }
+            </script>
  
         </form>
     </div>
