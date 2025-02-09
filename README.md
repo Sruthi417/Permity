@@ -44,6 +44,7 @@ https://github.com/Sruthi417/Permity/blob/main/img2.jpeg
 Event Details Page
 
 ![Screenshot3]
+https://github.com/Sruthi417/Permity/blob/main/img3.jpeg
 Letter Generator
 
 
