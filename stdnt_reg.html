@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Login</title>
     <link rel="stylesheet" href="stdnt_reg.css">
-    <script defer src="stdnt_login.js"></script>
+    <script defer src="stdnt_reg.js"></script>
     <script defer src="./firebase_config.js"></script>
 </head>
 <body>
@@ -51,7 +51,15 @@
                 <input type="tel" id="phone" placeholder="Enter your phone number" required>
             </div>
 
-            <button type="submit">Sign Up</button>
+    
+            <button type="submit" onclick="redirectToPage()">Sign Up</button>
+
+            <script>
+                function redirectToPage() {
+                    // Redirect to the desired page, e.g., "welcome.html"
+                    window.location.href = "add.html";
+                }
+            </script>
         </form>
     </div>
 

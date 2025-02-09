@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Permission Application</title>
-    <link rel="stylesheet" href="add.css">
+    <link rel="stylesheet" href="zadm_add.css">
 </head>
 <body>
 
@@ -54,20 +54,12 @@
     <div class="modal" id="permissionModal">
         <div class="modal-content">
             <h3>Select Permission Type</h3>
-            <select id="pageSelect" onchange="redirectToPage()">
-                <option value="Event.html">Event</option>
-                <option value="attendance.html">Attendance</option>
+            <select id="permissionType">
+                <option value="event">Event</option>
+                <option value="attendance">Attendance</option>
                 <option value="other">Other</option>
             </select>
-            <script>
-                function redirectToPage() {
-                    const selectedPage = document.getElementById("pageSelect").value;
-                    if (selectedPage) {
-                        window.location.href = selectedPage; // Redirect to the selected page
-                    }
-                }
-            </script>
-            <!-- <button onclick="submitPermission()">Submit</button> -->
+            <button onclick="submitPermission()">Submit</button>
         </div>
     </div>
 
